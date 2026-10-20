@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url('image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.smoothie-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+}
+.smoothie-container h{
+    color: white;
+    font-size: 5.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20;
+    animation: welcome 1000ms infinite alternate-reverse;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+}
+ 
+  
+@keyframes welcome{
+  0%{
+     transform: translateY(0);
+  }
+  100%{
+    transform: translateY(16px);
+  }
+}
+.smoothie-builder-container {
+    display: flex;
+    width: 100%;  
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.options-column, .summary-column {
+    flex: 1;
+    padding: 30px;
+}
+
+.options-column {
+    background-image: white;
+    backdrop-filter: blur;
+    border-right: 1px solid #eaeaea;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    color: #2c3e50;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.option-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.checkbox-group label, .radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 193, 78);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.summary-column {
+    background: rgb(255, 193, 78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;             
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: #e2e8f0;
+}
+
+#ingredients-cup {
+    min-height: 120px;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+/*Responsive Breakpoints (750px and 480px)*/
+/* Tablet View (750px and below) */
+@media (max-width: 750px) {
+  .smoothie-container h {
+    font-size: 3.5rem;
+  }
+
+  .smoothie-builder-container {
+    flex-direction: column; /* Stack the columns vertically */
+  }
+
+  .options-column {
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+}
+
+/* Mobile View (480px and below) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .smoothie-container h {
+    font-size: 2.3rem;
+  }
+
+  .options-column,
+  .summary-column {
+    padding: 15px;
+  }
+
+  /* On very small screens, stack checkboxes back to column if they get cramped */
+  .checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

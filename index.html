@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoothie Bar Menu</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="smoothie-container"> 
+        <h> WELCOME</h>
+    
+    <main class="smoothie-builder-container">
+        <!-- Left Column: Customization Options -->
+        <section class="options-column">
+            <h2>Build Your Smoothie</h2>
+            
+            <div class="option-group">
+                <label for="base-select">Base Liquid:</label>
+                <select id="base-select">
+                    <option value="" data-calories="0">-- Select Base --</option>
+                    <option value="Milk" data-calories="120">Milk (120 kcal)</option>
+                    <option value="Water" data-calories="0">Water (0 kcal)</option>
+                </select>
+            </div>
+
+            <div class="option-group">
+                <label>Fruit Choices (Pick up to 3):</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="fruit" value="Banana" data-calories="105"> Banana (105 kcal)</label>
+                    <label><input type="checkbox" name="fruit" value="Strawberry" data-calories="50"> Strawberry (50 kcal)</label>
+                    <label><input type="checkbox" name="fruit" value="Mango" data-calories="99"> Mango (99 kcal)</label>
+                    <label><input type="checkbox" name="fruit" value="Blueberry" data-calories="84"> Blueberry (84 kcal)</label>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>Protein Add-on:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="protein" value="Yes" data-calories="130"> Yes (130 kcal)</label>
+                    <label><input type="radio" name="protein" value="No" data-calories="0" checked> No (0 kcal)</label>
+                </div>
+            </div>
+
+            <button id="reset-btn">Reset Cup</button>
+        </section>
+
+        <!-- Right Column: Live Summary Output -->
+        <section class="summary-column">
+            <h2>Ingredients Cup</h2>
+            <div id="ingredients-cup">
+                <p>Your cup is empty.</p>
+            </div>
+            <h3>Total Calories: <span id="total-calories">0</span> kcal</h3>
+        </section>
+    </main>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
